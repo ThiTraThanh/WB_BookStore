@@ -1,0 +1,111 @@
+ * {
+margin: 0;
+padding :0;
+box-sizing: border-box;
+color: black;
+outline:none;
+}
+.titleleft{
+    font-family: Verdana, sans-serif;
+    color: rgb(30, 80, 105) ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+}
+h1{
+    font-family: Verdana, sans-serif;
+    color: rgb(30, 80, 105) ;
+}
+a{
+    text-decoration:none;
+}
+ul{
+    list-style:none;
+}
+.title{
+    font-weight:bold;
+}
+.admin-content{
+    padding-top: 0px;
+    display: flex;
+}
+.admin-content-left {
+    background-color:rgb(189, 210, 239);
+    width:20%;
+    height: 170vh;
+    padding: 0px 0 0 12px;
+    font-family: Verdana, sans-serif;
+}
+hr{
+    border-color: rgb(67, 8, 8)
+}
+.admin-content-left>ul>i>a{
+    font-weight:bold;
+}
+.admin-content-left ul li{
+    margin: 6px 0;
+}
+.admin-content-left ul ul {
+    margin-left:20px;
+}
+.admin-content-right{
+    width: 80%;
+    padding: 50px 0 0 20px;
+    background-color:rgb(239, 239, 240)
+}
+.admin-content-right-cartegory_add input{
+    height: 30px;
+    width: 200px;
+    padding-left: 12px;
+    margin-top: 20px;
+}
+.admin-content-right-cartegory_add button{
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    background-color: brown;
+    border:none;
+    color: white;
+}
+/*Cartegory list*/
+.admin-content-right-cartegory_list table{
+    width: 100%;
+    text-align:center;
+    margin-top:20px;
+}
+.admin-content-right-cartegory_list table tr th,td {
+   border: 1px solid rgb(149, 144, 144);
+    
+}
+table{
+    border-collapse:collapse ;
+}
+/*Product*/
+.admin-content-right-product_add input,select{
+width: 200px;
+height: 30px;
+display: block;
+margin: 12px 0;
+padding-left: 12px;
+}
+.admin-content-right-product_add textarea{
+    display: block;
+    height: 500px;
+    width: 500px;
+    margin-bottom: 12px;
+    padding: 12px;
+}
+.admin-content-right-product_add button{
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    background-color: brown;
+    border:none;
+    color: white;
+}
+
