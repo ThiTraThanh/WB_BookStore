@@ -4,17 +4,20 @@ include "slider.php";
 include "class/cartegory_class.php";
 ?>
 <?php
-$cartegory = new cartegory;
+$LoaiSach = new LoaiSach;
  if ($_SERVER['REQUEST_METHOD']=== 'POST'){
-    $cartegory_name= $_POST['cartegory_name'];
-    $insert_cartegory = $cartegory -> insert_cartegory($cartegory_name);
+    $tenLoaiSach= $_POST['tenLoaiSach'];
+    $insert_cartegory = $LoaiSach -> insert_cartegory($tenLoaiSach);
  }
 ?>
 <div class="admin-content-right">
-                <div class="admin-content-right-cartegory_add">
+                <div class="admin-content-right-product_add">
                 <h1> Thêm danh mục </h1>
                 <form action="" method="POST">
-                    <input name ="cartegory_name" type="text" placeholder="Nhập tên danh mục ">
+                <label for=""> Nhập mã loại sách <span style="color:red;">* </span> </label>
+                    <input name="maLoaiSach" required type="text" placeholder="Nhập mã loại sách ">
+                <label for=""> Nhập tên loại sách <span style="color:red;">* </span> </label> 
+                    <input name="tenLoaiSach" required type="text" placeholder="Nhập tên loại sách ">
                     <button type="submit"> Thêm </button> </form>
                 </div>
             </div>
