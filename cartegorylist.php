@@ -4,8 +4,8 @@ include "slider.php";
 include "class/cartegory_class.php";
 ?>
 <?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory->show_cartegory() ;
+$LoaiSach = new LoaiSach;
+$show_cartegory = $LoaiSach->show_cartegory() ;
 ?>
 <style>
     td,th{
@@ -40,9 +40,9 @@ $show_cartegory = $cartegory->show_cartegory() ;
 
                         <tr>
                             <td> <?php echo $i ?> </td> 
-                            <td> <?php echo $result['cartegory_id']?></td> 
-                            <td> <?php echo $result['cartegory_name']?> </td>
-                            <td> <a href="cartegoryedit.php?cartegory_id=<?php echo $result ['cartegory_id']?>"> Sửa </a> | <a href="cartegorydelete.php?cartegory_id=<?php echo $result ['cartegory_id']?>"> Xóa </a></td>
+                            <td> <?php echo $result['maLoaiSach']?></td> 
+                            <td> <?php echo $result['tenLoaiSach']?> </td>
+                            <td> <a href="cartegoryedit.php?maLoaiSach=<?php echo $result ['maLoaiSach']?>"> Sửa </a> | <a href="cartegorydelete.php?maLoaiSach=<?php echo $result ['maLoaiSach']?>"> Xóa </a></td>
                         </tr>
                         <?php
                             }
