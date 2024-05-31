@@ -1,13 +1,13 @@
 <?php
 include "class/cartegory_class.php";
-$cartegory = new cartegory;
-if (!isset($_GET['cartegory_id']) || $_GET['cartegory_id']==NULL ){
+$LoaiSach = new LoaiSach;
+if (!isset($_GET['maLoaiSach']) || $_GET['maLoaiSach']==NULL ){
     echo "<script>window.location = 'cartegorylist.php'</script>";
 }
 else {
-    $cartegory_id =  $_GET['cartegory_id'];
+    $maLoaiSach =  $_GET['maLoaiSach'];
 }
 
-    $delete_cartegory = $cartegory -> delete_cartegory($cartegory_id);
+    $delete_cartegory = $LoaiSach -> delete_cartegory($maLoaiSach);
 
 ?>
