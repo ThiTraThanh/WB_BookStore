@@ -1,13 +1,13 @@
 <?php
 include "class/product_class.php";
-$product = new product;
-if (!isset($_GET['product_id']) || $_GET['product_id']==NULL ){
+$Sach = new Sach;
+if (!isset($_GET['maSach']) || $_GET['maSach']==NULL ){
     echo "<script>window.location = 'productlist.php'</script>";
 }
 else {
-    $product_id =  $_GET['product_id'];
+    $maSach =  $_GET['maSach'];
 }
 
-    $delete_product = $product-> delete_product($product_id);
+    $delete_product = $Sach-> delete_product($maSach);
 
 ?>
