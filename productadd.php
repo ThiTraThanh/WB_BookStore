@@ -5,12 +5,12 @@ include "class/product_class.php";
 
 ?>
 <?php
-$product= new product;
+$Sach= new Sach;
 if ($_SERVER['REQUEST_METHOD']=== 'POST'){ 
     // echo '<pre>';
     // echo print_r($_FILES['product_img_desc']['name']);
     // echo '</pre>';
-   $insert_product = $product  -> insert_product($_POST,$_FILES);
+   $insert_product = $Sach  -> insert_product($_POST,$_FILES);
 }
 ?>
 <div class="admin-content-right">
@@ -18,49 +18,60 @@ if ($_SERVER['REQUEST_METHOD']=== 'POST'){
                 <h1 style="padding-bottom: 15px;"> Thêm sản phẩm </h1>
                 <form div class="formproduct" action="" method="POST" enctype="multipart/form-data">
                     <label for=""> Nhập tên sản phẩm <span style="color:red;">* </span> </label> 
-                    <input name="product_name" required type="text" placeholder="Nhập tên sản phẩm ">
+                    <input name="tenSach" required type="text" placeholder="Nhập tên sản phẩm ">
+                    <label for=""> Nhập mã sản phẩm <span style="color:red;">* </span> </label> 
+                    <input name="maSach" required type="text" placeholder="Nhập mã sản phẩm ">
                     <lable for=""> Chọn danh mục <span style="color:red;">*</span></label>
-                    <select name="cartegory_id" id="">
-                        <option v aue="#">--Chọn--</option>
+                    <select name="maLoaiSach" id="">
+                        <option value="#">--Chọn--</option>
                         <?php 
-                            $show_cartegory= $product -> show_cartegory();
+                            $show_cartegory= $Sach -> show_cartegory();
                             if($show_cartegory){
                                 while($result=$show_cartegory -> fetch_assoc()){
                         ?>
-                        <option value="<?php echo $result['cartegory_id']?>"><?php echo $result['cartegory_name'] ?>
+                        <option value="<?php echo $result['maLoaiSach']?>"><?php echo $result['tenLoaiSach'] ?>
                           
                             <?php
                                 }}
                             ?>
                     </select>
-                    <lable for=""> Chọn loại sản phẩm <span style="color:red;">*</span></label>
-                    <select name="brand_id" id="">
-                        <label for=""> Chọn loại sản phẩm <span style="color:red;">* </span> </label> 
+                    <lable for=""> Chọn Nhà Xuất Bản <span style="color:red;">*</span></label>
+                    <select name="maNXB" id="">
                         <option vaue="#">--Chọn--</option>
                         <?php 
-                            $show_brand= $product -> show_brand();
-                            if($show_brand){
-                                while($result=$show_brand -> fetch_assoc()){
+                            $show_nxb= $Sach -> show_nxb();
+                            if($show_nxb){
+                                while($result=$show_nxb -> fetch_assoc()){
                         ?>
-                        <option value="<?php echo $result['brand_id']?>"><?php echo $result['brand_name'] ?>
+                        <option value="<?php echo $result['maNXB']?>"><?php echo $result['tenNXB'] ?>
                           
                             <?php
                                 }}
                             ?>
                     </select>
-                    <label for=""> Tên nhà xuất bản <span style="color:red;">* </span> </label> 
-                    <input name="nxb_name" required type="text" placeholder="Nhà xuất bản">
-                    <label for=""> Tên tác giả <span style="color:red;">* </span> </label> 
-                    <input name="tacgia_name" required type="text" placeholder="Tên tác giả">
+                    <lable for=""> Chọn Tác Giả <span style="color:red;">*</span></label>
+                    <select name="maTacGia" id="">
+                        <option vaue="#">--Chọn--</option>
+                        <?php 
+                            $show_TacGia= $Sach -> show_TacGia();
+                            if($show_TacGia){
+                                while($result=$show_TacGia -> fetch_assoc()){
+                        ?>
+                        <option value="<?php echo $result['maTacGia']?>"><?php echo $result['tenTacGia'] ?>
+                          
+                            <?php
+                                }}
+                            ?>
+                    </select>
                     <label for=""> Giá sản phẩm <span style="color:red;">* </span> </label> 
-                    <input name="product_price" required type="text" placeholder="Giá sản phẩm">
+                    <input name="Gia" required type="text" placeholder="Giá sản phẩm">
+                    <label for=""> Số lượng còn lại <span style="color:red;">* </span> </label> 
+                    <input name="soLuongConLai" required type="text" placeholder="Giá sản phẩm">
                     <label for=""> Mô tả sản phẩm <span style="color:red;">* </span> </label> 
-                    <textarea name="product_desc" id="editor1" cols="30" rows="10" placeholder="Mô tả sản phẩm"> </textarea>
+                    <textarea name="moTa" id="editor1" cols="30" rows="10" placeholder="Mô tả sản phẩm"> </textarea>
                     <lable for=""> Ảnh sản phẩm <span style="color:red ;">*</span></lable>
-                    <input name="product_img" required type="file">
-                    <lable for=""> Ảnh mô tả <span style="color:red ;">*</span></lable>
-                    <input name="product_img_desc[]"required multiple type="file">
-                    <button type="submit"> Thêm </button> 
+                    <input name="anhBia" required type="file">
+                    <button type="submit"> Thêm </button> </form>
                 </form>
                 </div>
             </div>
