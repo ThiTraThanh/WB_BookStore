@@ -10,10 +10,18 @@
                     </li>
                     <hr>
                     <li>
-                        <a div class="title" href="#"> Loại sản phẩm </a>
+                        <a div class="title" href="#"> Nhà Xuất Bản </a>
                             <ul>
-                                <li> <a href="brandadd.php">Thêm loại sản phẩm</a></li>
-                                <li> <a href="brandlist.php">Doanh sách loại sản phẩm</a></li>
+                                <li> <a href="nxbadd.php">Thêm Nhà Xuất Bản</a></li>
+                                <li> <a href="nxblist.php">Danh sách Nhà Xuất Bản</a></li>
+                            </ul>
+                    </li>
+                    <hr>
+                    <li>
+                        <a div class="title" href="#"> Tác giả </a>
+                            <ul>
+                                <li> <a href="tacgiaadd.php">Thêm Tác giả</a></li>
+                                <li> <a href="tacgialist.php">Danh sách Tác giả</a></li>
                             </ul>
                     </li>
                     <hr>
