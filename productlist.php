@@ -5,13 +5,13 @@ include "slider.php";
 include "class/product_class.php";
 ?>
 <?php
-$product= new product;
-$show_product = $product->show_product($_POST,$_FILES) ;
+$Sach= new Sach;
+$show_product = $Sach->show_product($_POST,$_FILES) ;
 if ($_SERVER['REQUEST_METHOD']=== 'POST'){ 
     // echo '<pre>';
     // echo print_r($_FILES['product_img_desc']['name']);
     // echo '</pre>';
-   $show_product = $product  -> show_product($_POST,$_FILES);
+   $show_product = $Sach  -> show_product($_POST,$_FILES);
 }
 ?>
 <style>
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD']=== 'POST'){
         padding: 10px;
     }
     .admin-content-right-cartegory_list{
-        padding-right:40px;
+        padding-right:80px;
         padding-left:40px;
     }
     h1{
@@ -34,12 +34,11 @@ if ($_SERVER['REQUEST_METHOD']=== 'POST'){
                     <h1> Danh sách Sản phẩm </h1>
                     <table style="padding: 15px">
                         <tr>
-                            <th style="width:35px"> STT</th>
-                            <th style="width:35px"> ID </th>
-                            <th style="width:190px"> Danh mục </th>
-                            <th style="width:190px"> Loại sản phẩm </th>
-                            <th style="width:190px"> Tên nhà xuất bản </th>
-                            <th style="width:190px"> Tên tác giả </th>
+                            <th style="width:80px"> STT</th>
+                            <th style="width:80px"> Mã danh mục </th>
+                            <th style="width:80px"> Mã nhà xuất bản </th>
+                            <th style="width:80px"> Mã tác giả </th>
+                            <th style="width:80px"> Mã sản phẩm </th>
                             <th style="width:190px"> Sản phẩm </th>
                             <th style="width:100px"> Tùy biến </th>
                         </tr>
@@ -50,13 +49,12 @@ if ($_SERVER['REQUEST_METHOD']=== 'POST'){
                         ?>
                         <tr>
                         <td> <?php echo $i ?> </td> 
-                            <td> <?php echo $result['brand_id']?></td> 
-                            <td> <?php echo $result['cartegory_name']?></td> 
-                            <td> <?php echo $result['brand_name']?> </td>
-                            <td> <?php echo $result['nxb_name']?> </td>
-                            <td> <?php echo $result['tacgia_name']?> </td>
-                            <td> <?php echo $result['product_name']?> </td>
-                            <td> <a href="productedit.php?product_id=<?php echo $result ['product_id']?>"> Sửa </a> | <a href="productdelete.php?product_id=<?php echo $result ['product_id']?>"> Xóa </a></td>
+                            <td> <?php echo $result['maLoaiSach']?></td> 
+                            <td> <?php echo $result['maNXB']?> </td>
+                            <td> <?php echo $result['maTacGia']?> </td>
+                            <td> <?php echo $result['maSach']?> </td>
+                            <td> <?php echo $result['tenSach']?> </td>
+                            <td> <a href="productedit.php?maSach=<?php echo $result ['maSach']?>"> Sửa </a> | <a href="productdelete.php?maSach=<?php echo $result ['maSach']?>"> Xóa </a></td>
                         </tr>
                         <?php
                             }
