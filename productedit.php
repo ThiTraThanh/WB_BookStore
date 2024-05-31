@@ -4,18 +4,18 @@ include "slider.php";
 include "class/product_class.php";
 ?>
 <?php
-$product= new product;
-    $product_id =  $_GET['product_id'];
-    $get_product = $product -> get_product($product_id);
+$Sach= new Sach;
+    $maSach =  $_GET['maSach'];
+    $get_product = $Sach -> get_product($maSach);
     if($get_product)
     {
         $resultA=$get_product -> fetch_assoc();
     }
  if ($_SERVER['REQUEST_METHOD']=== 'POST'){
-    $cartegory_id= $_POST['cartegory_id'];
-    $brand_name= $_POST['brand_name'];
-    $product_name= $_POST['product_name'];
-    $update_product = $product -> update_product($cartegory_id,$brand_id,$product_name,$product_id);
+    $maNXB= $_POST['maNXB'];
+    $maTacGia= $_POST['maTacGia'];
+    $Sach= $_POST['Sach'];
+    $update_product = $Sach -> update_product($maNXB,$maTacGia,$Sach,$maSach);
  }
 ?>
 <style>
@@ -28,49 +28,59 @@ $product= new product;
 <div class="admin-content-right">
                 <div class="admin-content-right-cartegory_add">
                 <h1> Thêm sản phẩm </h1>
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form div class="formproduct" action="" method="POST" enctype="multipart/form-data">
                     <label for=""> Nhập tên sản phẩm <span style="color:red;">* </span> </label> 
-                    <input name="product_name" required type="text" placeholder="Nhập tên sản phẩm ">
+                    <input name="Sach" required type="text" placeholder="Nhập tên sản phẩm ">
                     <lable for=""> Chọn danh mục <span style="color:red;">*</span></label>
-                    <select name="cartegory_id" id="">
-                        <option v aue="#">--Chọn--</option>
+                    <select name="maLoaiSach" id="">
+                        <option value="#">--Chọn--</option>
                         <?php 
-                            $show_cartegory= $product -> show_cartegory();
+                            $show_cartegory= $Sach -> show_cartegory();
                             if($show_cartegory){
                                 while($result=$show_cartegory -> fetch_assoc()){
                         ?>
-                        <option value="<?php echo $result['cartegory_id']?>"><?php echo $result['cartegory_name'] ?>
+                        <option value="<?php echo $result['maLoaiSach']?>"><?php echo $result['tenLoaiSach'] ?>
                           
                             <?php
                                 }}
                             ?>
-    
                     </select>
-                    <lable for=""> Chọn loại sản phẩm <span style="color:red;">*</span></label>
-                    <select name="brand_id" id="">
-                        <label for=""> Chọn loại sản phẩm <span style="color:red;">* </span> </label> 
+                    <lable for=""> Chọn Nhà Xuất Bản <span style="color:red;">*</span></label>
+                    <select name="maNXB" id="">
                         <option vaue="#">--Chọn--</option>
                         <?php 
-                            $show_brand= $product -> show_brand();
-                            if($show_brand){
-                                while($result=$show_brand -> fetch_assoc()){
+                            $show_nxb= $Sach -> show_nxb();
+                            if($show_nxb){
+                                while($result=$show_nxb -> fetch_assoc()){
                         ?>
-                        <option value="<?php echo $result['brand_id']?>"><?php echo $result['brand_name'] ?>
+                        <option value="<?php echo $result['maNXB']?>"><?php echo $result['tenNXB'] ?>
+                          
+                            <?php
+                                }}
+                            ?>
+                    </select>
+                    <lable for=""> Chọn Tác Giả <span style="color:red;">*</span></label>
+                    <select name="maTacGia" id="">
+                        <option vaue="#">--Chọn--</option>
+                        <?php 
+                            $show_TacGia= $Sach -> show_TacGia();
+                            if($show_TacGia){
+                                while($result=$show_TacGia -> fetch_assoc()){
+                        ?>
+                        <option value="<?php echo $result['maTacGia']?>"><?php echo $result['tenTacGia'] ?>
                           
                             <?php
                                 }}
                             ?>
                     </select>
                     <label for=""> Giá sản phẩm <span style="color:red;">* </span> </label> 
-                    <input name="product_price" required type="text" placeholder="Giá sản phẩm">
-                    <label for=""> Giá khuyến mãi <span style="color:red;">* </span> </label> 
-                    <input name="product_price_new" required type="text" placeholder="Giá khuyến mãi" >
+                    <input name="Gia" required type="text" placeholder="Giá sản phẩm">
+                    <label for=""> Số lượng còn lại <span style="color:red;">* </span> </label> 
+                    <input name="soLuongConLai" required type="text" placeholder="Giá sản phẩm">
                     <label for=""> Mô tả sản phẩm <span style="color:red;">* </span> </label> 
-                    <textarea name="product_desc" id="editor1" cols="30" rows="10" placeholder="Mô tả sản phẩm"> </textarea>
-                    <lable for=""> Ảnh sản phẩm <span style="color:red ;">*</span></lable>
-                    <input name="product_img" required type="file">
-                    <lable for=""> Ảnh mô tả <span style="color:red ;">*</span></lable>
-                    <input name="product_img_desc[]"required multiple type="file">
+                    <textarea name="moTa" id="editor1" cols="30" rows="10" placeholder="Mô tả sản phẩm"> </textarea>
+                    <lable for=""> Ảnh mô tả<span style="color:red ;">*</span></lable>
+                    <input name="anhBia" required type="file">
                     <button type="submit"> Sửa </button> 
                 </form>
                 </div>
