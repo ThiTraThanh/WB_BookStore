@@ -4,32 +4,32 @@ include "slider.php";
 include "class/cartegory_class.php";
 ?>
 <?php
-$cartegory= new cartegory;
-if (!isset($_GET['cartegory_id']) || $_GET['cartegory_id']==NULL ){
+$LoaiSach= new LoaiSach;
+if (!isset($_GET['maLoaiSach']) || $_GET['maLoaiSach']==NULL ){
     echo "<script>window.location = 'cartegorylist.php'</script>";
 }
 else {
-    $cartegory_id =  $_GET['cartegory_id'];
+    $maLoaiSach =  $_GET['maLoaiSach'];
 }
 
-    $get_cartegory = $cartegory -> get_cartegory($cartegory_id);
+    $get_cartegory = $LoaiSach -> get_cartegory($maLoaiSach);
     if($get_cartegory)
     {
         $result=$get_cartegory -> fetch_assoc();
     }
 ?>
 <?php
-$cartegory = new cartegory;
+$LoaiSach = new LoaiSach;
  if ($_SERVER['REQUEST_METHOD']=== 'POST'){
-    $cartegory_name= $_POST['cartegory_name'];
-    $update_cartegory = $cartegory -> update_cartegory($cartegory_name,$cartegory_id);
+    $tenLoaiSach= $_POST['tenLoaiSach'];
+    $update_cartegory = $LoaiSach -> update_cartegory($tenLoaiSach,$maLoaiSach);
  }
 ?>
 <div class="admin-content-right">
                 <div class="admin-content-right-cartegory_add">
                 <h1> Thêm danh mục </h1>
                 <form action="" method="POST">
-                    <input required name ="cartegory_name" type="text" placeholder="Nhập tên danh mục " value="<?php echo $result['cartegory_name'] ?>">
+                    <input required name ="tenLoaiSach" type="text" placeholder="Nhập tên danh mục " value="<?php echo $result['tenLoaiSach'] ?>">
                     <button type="submit">Sửa  </button> </form>
                 </div>
             </div>
