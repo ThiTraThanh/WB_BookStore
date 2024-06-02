@@ -9,8 +9,8 @@ class LoaiSach {
     {
         $this -> db = new Database();
     }
-    public function insert_cartegory($tenLoaiSach){
-        $query="INSERT INTO  theloaisach(tenLoaiSach) VALUES ('$tenLoaiSach') ";
+    public function insert_cartegory($tenLoaiSach,$maLoaiSach){
+        $query="INSERT INTO  theloaisach(tenLoaiSach,maLoaiSach) VALUES ('$tenLoaiSach','$maLoaiSach') ";
         $result = $this -> db -> insert($query);
         header('Location:cartegorylist.php');
         return $result;
