@@ -6,8 +6,9 @@ include "class/nxb_class.php";
 <?php
 $nxb = new nxb;
  if ($_SERVER['REQUEST_METHOD']=== 'POST'){
+    $maNXB= $_POST['maNXB'];
     $tenNXB= $_POST['tenNXB'];
-    $insert_nxb = $nxb -> insert_nxb($tenNXB);
+    $insert_nxb = $nxb -> insert_nxb($maNXB,$tenNXB);
  }
 ?>
 <div class="admin-content-right">
