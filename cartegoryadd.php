@@ -7,7 +7,8 @@ include "class/cartegory_class.php";
 $LoaiSach = new LoaiSach;
  if ($_SERVER['REQUEST_METHOD']=== 'POST'){
     $tenLoaiSach= $_POST['tenLoaiSach'];
-    $insert_cartegory = $LoaiSach -> insert_cartegory($tenLoaiSach);
+    $maLoaiSach= $_POST['maLoaiSach'];
+    $insert_cartegory = $LoaiSach -> insert_cartegory($tenLoaiSach,$maLoaiSach);
  }
 ?>
 <div class="admin-content-right">
