@@ -8,8 +8,8 @@ class nxb {
     {
         $this -> db = new Database();
     }
-    public function insert_nxb($tenNXB){
-        $query="INSERT INTO  nxb(tenNXB) VALUES ('$tenNXB') ";
+    public function insert_nxb($maNXB,$tenNXB){
+        $query="INSERT INTO  nxb(maNXB,tenNXB) VALUES ('$maNXB','$tenNXB') ";
         $result = $this -> db -> insert($query);
         header('Location:nxblist.php');
         return $result;
