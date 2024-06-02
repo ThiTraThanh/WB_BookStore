@@ -8,8 +8,8 @@ class TacGia {
     {
         $this -> db = new Database();
     }
-    public function insert_TacGia($tenTacGia){
-        $query="INSERT INTO  tacgia(tenTacGia) VALUES ('$tenTacGia') ";
+    public function insert_TacGia($maTacGia,$tenTacGia){
+        $query="INSERT INTO  tacgia(maTacGia,tenTacGia) VALUES ('$maTacGia','$tenTacGia') ";
         $result = $this -> db -> insert($query);
         header('Location:TacGialist.php');
         return $result;
