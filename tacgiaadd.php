@@ -7,7 +7,8 @@ include "class/tacgia_class.php";
 $tacgia = new tacgia;
  if ($_SERVER['REQUEST_METHOD']=== 'POST'){
     $tenTacGia= $_POST['tenTacGia'];
-    $insert_tacgia = $tacgia -> insert_tacgia($tenTacGia);
+    $maTacGia= $_POST['maTacGia'];
+    $insert_tacgia = $tacgia -> insert_tacgia($maTacGia,$tenTacGia);
  }
 ?>
     <div class="admin-content-right">
