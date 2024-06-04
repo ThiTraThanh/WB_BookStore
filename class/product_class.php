@@ -23,6 +23,7 @@ class Sach {
         $moTa=$_POST['moTa'];
         $soLuongConLai=$_POST['soLuongConLai'];
         $anhBia=$_FILES['anhBia']['name'];
+        move_uploaded_file($_FILES['anhBia']['tmp_name'],"uploads/".$_FILES['anhBia']['name']);
         $query="INSERT INTO  sach(
             tenSach, 
             maSach,
