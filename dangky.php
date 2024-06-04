@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $last_id = 0; // Nếu không có người dùng nào, bắt đầu từ 0
             }
             $new_id = (int)$last_id + 1; // Tăng mã người dùng lên 1
-            $user_id = "US" . str_pad($new_id, 0, "0", STR_PAD_LEFT); // Thêm "US" và đệm số 0 cho phần số
+            $user_id = "US" . str_pad($new_id, 3, "0", STR_PAD_LEFT); // Thêm "US" và đệm số 0 cho phần số
             // Thêm người dùng mới vào cơ sở dữ liệu
             $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
             $stmt = $conn->prepare('INSERT INTO nguoidung (maNguoiDung, tenDangNhap, matKhau, email) VALUES (?, ?, ?, ?)');
