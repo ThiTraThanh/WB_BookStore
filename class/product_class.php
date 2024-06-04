@@ -30,8 +30,8 @@ class Sach {
             maNXB,
             maTacGia,
             Gia,
-            moTa,
             soLuongConLai,
+            moTa,
             anhBia)
          VALUES (
             '$tenSach', 
