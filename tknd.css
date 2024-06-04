@@ -1,0 +1,110 @@
+.logo{
+    color: rgb(19, 85, 201);
+    text-align: center;
+    font-size: 35px;
+    text-decoration-line: none;
+    font-weight: 800;
+}
+.search{
+    background-color: azure;
+    border-radius: 10px;
+    padding: 8px;
+    width: auto;
+}
+.container-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.container-start {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(156, 234, 237);
+    padding: 10px;
+}
+.chucnang{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    font-weight: 300;
+    button{
+        border: 2 solid black;
+        background-color: white;
+        font-size: 15px;
+        border-radius: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+.container-start-2 {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(217, 217, 217);
+    padding: 10px;
+    list-style-type: none;
+}
+.trang{
+    color: black;
+    font-size: 30px;
+    font-weight: 350;
+    text-decoration: none;
+    text-align: center;
+}
+.trang:hover{
+    background-color: rgb(135, 135, 135);
+    width: 100%;
+    font-weight: 400;
+}
+.account{
+    margin-left: 40px;
+    margin-top: 150px;
+    font-size: 28px;
+    width: 400px;
+    height: 250px;
+    text-align: center;
+}
+button{
+    width: 300px;
+}
+table.register{
+    margin-left: 500px;
+    margin-top: -300px;
+    height: 430px;
+    width: 750px;
+    font-size: 20px;
+}
+.nut{
+    text-align: center;
+}
+.nut button
+{
+    background-color: rgb(150, 150, 208);
+}
+table.comment{
+    margin-left: 500px;
+    margin-top: -300px;
+    height: 200px;
+    width: 700px;
+    font-size: 23px;
+}
+.ttin
+{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(57, 57, 185);
+}
+td
+{
+    font-weight:500;
+    font-size: 20px;
+}
+
+table.register tr {
+    margin-bottom: 20px; /* Adjust the value to set the desired space */
+    padding-bottom: 20px; /* Optional, for additional space */
+}
+table.register td {
+    margin-bottom: 20px; /* Adjust the value to set the desired space */
+    padding-bottom: 20px; /* Optional, for additional space */
+}
