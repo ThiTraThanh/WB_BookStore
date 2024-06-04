@@ -27,7 +27,7 @@ $Sach= new Sach;
 </style>
 <div class="admin-content-right">
 <div class="admin-content-right-product_add">
-                <h1> Thêm sản phẩm </h1>
+                <h1> Sửa sản phẩm </h1>
                 <form div class="formproduct" action="" method="POST" enctype="multipart/form-data">
                     <label for=""> Nhập tên sản phẩm <span style="color:red;">* </span> </label> 
                     <input name="Sach" required type="text" placeholder="Nhập tên sản phẩm ">
