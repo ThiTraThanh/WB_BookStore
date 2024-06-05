@@ -85,7 +85,7 @@
 
         <?php
 include('ketnoi.php');
-$sql_chitiet="SELECT * FROM sach, theloaisach WHERE sach.maLoaiSach=theloaisach.maLoaiSach AND sach.maSach='$_GET[id]' LIMIT 1";
+$sql_chitiet="SELECT * FROM sach, theloaisach, tacgia, nxb WHERE sach.maLoaiSach=theloaisach.maLoaiSach AND sach.maTacGia=tacgia.maTacGia AND sach.maNXB=nxb.maNXB AND sach.maSach='$_GET[id]' LIMIT 1";
 $query_chitiet=mysqli_query($mysqli,$sql_chitiet);
 while($row_chitiet=mysqli_fetch_array($query_chitiet)){
 ?>
@@ -101,12 +101,12 @@ while($row_chitiet=mysqli_fetch_array($query_chitiet)){
                 <div class="tomtat_thongtin">
                     <div class="tomtat1">
                         <span style="width: 200px">Nhà cung cấp:
-                            <strong><?php echo $row_chitiet['maNXB']?></strong></span>
-                        <span>Tác giả: <strong><?php echo $row_chitiet['maTacGia']?></strong></span>
+                            <strong><?php echo $row_chitiet['tenNXB']?></strong></span>
+                        <span>Tác giả: <strong><?php echo $row_chitiet['tenTacGia']?></strong></span>
                     </div>
                     <div class="tomtat2">
                         <span style="width: 200px">Nhà xuất bản:
-                            <strong><?php echo $row_chitiet['maNXB']?></strong></span>
+                            <strong><?php echo $row_chitiet['tenNXB']?></strong></span>
                         <span>Hình thức: <strong>Bìa mềm</strong></span>
                     </div>
                 </div>
@@ -152,11 +152,11 @@ while($row_chitiet=mysqli_fetch_array($query_chitiet)){
             <ul>
                 <li>
                     <span class="key">Tác giả:</span>
-                    <span class="value"><?php echo $row_chitiet['maTacGia']?></span>
+                    <span class="value"><?php echo $row_chitiet['tenTacGia']?></span>
                 </li>
                 <li>
                     <span class="key">Nhà xuất bản:</span>
-                    <span class="value"><?php echo $row_chitiet['maNXB']?></span>
+                    <span class="value"><?php echo $row_chitiet['tenNXB']?></span>
                 </li>
                 <li>
                     <span class="key">Mô tả sản phẩm:</span>
