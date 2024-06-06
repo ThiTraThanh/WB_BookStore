@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>Chi tiết sản phẩm</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -129,20 +130,20 @@ while($row_chitiet=mysqli_fetch_array($query_chitiet)){
                     </ul>
                 </div>
 
-                <div class="soluongmua">
-                    <button class="minus-btn" type="button">-</button>
-                    <input type="text" id="soluongmua" name="soluongmua" value="1" readonly />
-                    <button class="plus-btn" type="button">+</button>
-                </div>
                 <div>
-                    <div class="button-container">
-                        <p>
+                    <form method="POST" action="themgiohang.php">
+                        <div class="button-container">
+                            <input type="hidden" name="maSach" value="<?php echo $row_chitiet['maSach']; ?>">
+                            <input type="hidden" name="anhBia" value="<?php echo $row_chitiet['anhBia']; ?>">
+                            <input type="hidden" name="tenSach" value="<?php echo $row_chitiet['tenSach']; ?>">
+                            <input type="hidden" name="gia" value="<?php echo $row_chitiet['gia']; ?>">
+                            <!-- <input type="hidden" name="soluongmua" value="1" id="soluongmua"> -->
                             <input class="themgiohang" name="themgiohang" type="submit" value="Thêm giỏ hàng" />
-                        </p>
-                        <a href="trangchu/main/themgiohang.php?id_sp=<?php echo $row_chitiet['maSach'];?>"><button
-                                type="button" class="muangay">Mua ngay</button></a>
-                    </div>
+                            <button type="submit" class="muangay" name="muangay">Mua ngay</button>
+                        </div>
+                    </form>
                 </div>
+
             </div>
         </div>
 
