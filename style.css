@@ -227,40 +227,6 @@
   text-align: center; /* Căn giữa văn bản trong thẻ span */
   margin-right: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
 }
-/*css cho text và ô*/
-.soluongmua {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
-  width: 150px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-/*ô cộng trừ*/
-.soluongmua button {
-  background-color: rgb(255, 255, 255);
-  border: none;
-  padding: 7px;
-  cursor: pointer;
-  font-size: 14px;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/*ô số*/
-.soluongmua input {
-  width: 50px;
-  text-align: center;
-  border: none;
-  font-size: 14px;
-  padding: 5px 0;
-}
-.soluongmua input:focus {
-  outline: none;
-}
 .button-container {
   display: flex;
   gap: 10px; /*khoảng cách của 2 button*/
@@ -326,4 +292,38 @@
   flex: 2;
   text-align: justify;
   color: #333;
+}
+/*TRANG MUA HÀNG*/
+.giohang-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.giohang-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.giohang-table th,
+.giohang-table td {
+  border: 1px solid #ddd; /* Thay vì #ccc */
+  padding: 15px; /* Tăng độ dày lề */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.giohang-table th {
+  background-color: #f2f2f2;
+}
+
+.giohang-table img {
+  max-width: 100px; /* Đảm bảo hình ảnh không vượt quá kích thước */
+  height: auto;
+}
+
+.giohang-empty {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 18px; /* Tăng cỡ chữ */
+  color: #888; /* Đổi màu chữ */
 }
